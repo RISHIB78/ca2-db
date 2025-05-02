@@ -53,7 +53,7 @@ app.put("/create/:id",async (req,res) => {
 })
 app.delete("/delete/:id",async (req,res) => {
     try {
-        const deleted=mod.findById(req.params.id)
+        const deleted=mod.findByIdAndDelete(req.params.id)
         if(!deleted){
             return res.status(404).json({message:"could not delete book"})
         }
